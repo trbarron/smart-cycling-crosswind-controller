@@ -1,6 +1,6 @@
 # Heart Rate Fan Controller
 
-A Raspberry Pi-based automatic fan controller that adjusts fan speed based on your real-time heart rate, similar to the [WAHOO KICKR HEADWIND](https://www.wahoofitness.com/devices/indoor-cycling/accessories/kickr-headwind-buy). Perfect for indoor cycling, running, or any workout where you want cooling that adapts to your exertion level.
+A Raspberry Pi-based automatic fan controller that adjusts fan speed based on your real-time heart rate, similar to the [WAHOO KICKR HEADWIND](https://www.wahoofitness.com/devices/indoor-cycling/accessories/kickr-headwind-buy). Ideal for indoor cycling.
 
 ## Features
 
