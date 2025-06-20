@@ -2,6 +2,8 @@
 
 A Raspberry Pi-based automatic fan controller that adjusts fan speed based on your real-time heart rate, similar to the [wahoo KICKR Headwind](https://www.wahoofitness.com/devices/indoor-cycling/accessories/kickr-headwind-buy). Ideal for indoor cycling.
 
+![alt text](/assets/image.png)
+
 ## Features
 
 - **Real-time heart rate monitoring** via Colmi R02 smart ring
