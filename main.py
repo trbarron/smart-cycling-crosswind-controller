@@ -32,8 +32,8 @@ DISPLAY_DIO_PIN = 27
 UPDATE_INTERVAL = 90
 MAX_CONSECUTIVE_FAILURES = 3
 
-MIN_HEART_RATE = 50
-MAX_HEART_RATE = 120
+MIN_HEART_RATE = 80
+MAX_HEART_RATE = 150
 MIN_SERVO_POS = -1.0
 MAX_SERVO_POS = 1.0
 
@@ -149,7 +149,8 @@ class HeartRateFanController:
     def heart_rate_to_servo_position(self, heart_rate):
         hr_clamped = max(MIN_HEART_RATE, min(MAX_HEART_RATE, heart_rate))
         hr_normalized = (hr_clamped - MIN_HEART_RATE) / (MAX_HEART_RATE - MIN_HEART_RATE)
-        return MIN_SERVO_POS + (hr_normalized * (MAX_SERVO_POS - MIN_SERVO_POS))
+        # Map to servo range: -1.0 (80 BPM) to 1.0 (150 BPM)
+        return -1.0 + (hr_normalized * 2.0)
     
     def update_display(self, heart_rate, connected=True):
         if not self.display_connected: return
