@@ -77,25 +77,14 @@ Colmi R02 Ring:
 
 ### Colmi R02 Ring Setup
 
-1. **Pair the ring with your Raspberry Pi**
-   ```bash
-   sudo bluetoothctl
-   # In bluetoothctl:
-   scan on
-   # Wait for your ring to appear (5B:62:EE:DA:AD:40 or similar)
-   pair [RING_MAC_ADDRESS]
-   trust [RING_MAC_ADDRESS]
-   exit
-   ```
-
-2. **Update the MAC address in the code**
+1. **Update the MAC address in the code**
    - Find your ring's MAC address:
    ```bash
    colmi_r02_utils --scan
    ```
    - Edit the `COLMI_ADDRESS` variable in the Python script with your ring's address
 
-3. **Test the connection**
+2. **Test the connection**
    ```bash
    colmi_r02_client --address=YOUR_RING_MAC get-real-time-heart-rate
    ```
@@ -122,11 +111,3 @@ MAX_SERVO_POS = 1.0   # Maximum fan speed position
 ```python
 UPDATE_INTERVAL = 90  # Seconds between heart rate readings
 ```
-
-## How It Works
-
-1. **Heart Rate Monitoring**: The Colmi R02 ring continuously monitors your heart rate via Bluetooth
-2. **Speed Calculation**: Heart rate is mapped to a servo position (higher HR = faster fan)
-3. **Servo Control**: SG90 servo adjusts the AC motor speed controller
-4. **Display Update**: Current heart rate is shown on the 4-digit display
-5. **Error Handling**: Automatic Bluetooth reconnection and failure recovery
